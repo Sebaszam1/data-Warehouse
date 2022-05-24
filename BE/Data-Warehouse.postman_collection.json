@@ -1,0 +1,1728 @@
+{
+	"info": {
+		"_postman_id": "4d65d1cf-aec6-4ece-bd5b-905fc4d55fb8",
+		"name": "Data-Warehouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"danielbetancur@ingenieros.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register (create user)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Lucius\",\r\n    \"lastname\": \"Malfoy\",\r\n    \"email\": \"luciusmalfoy@yahoo.com\",\r\n    \"perfil\": \"Básico\",\r\n    \"password\": \"a111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Gustavo\",\r\n    \"lastname\": \"Elias\",\r\n    \"email\": \"gustavoelias@yahoo.com\",\r\n    \"perfil\": \"Básico\",\r\n    \"password\": \"1zzx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Regions",
+			"item": [
+				{
+					"name": "Get regions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/regions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"regions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create region",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region_name\": \"Europa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/regions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"regions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get region",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/regions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"regions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify region",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region_name\": \"Centroamérica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/regions/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"regions",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete region",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/regions/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"regions",
+								"3"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get countries of region",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/regions/1/countries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"regions",
+								"1",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cities of region",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/regions/1/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"regions",
+								"1",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get regions, countries and cities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Admin",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"disabled": true
+							},
+							{
+								"description": "Básico",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/regionsCountriesCities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"regionsCountriesCities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "Get countries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/countries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create country",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country_name\": \"Brasil\",\r\n    \"region_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/countries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get country",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "aut",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/countries/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"countries",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify country",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region_id\": 1,\r\n    \"country_name\": \"Brasil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/countries/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"countries",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete country",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/countries/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"countries",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cities of country",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/countries/1/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"countries",
+								"1",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cities",
+			"item": [
+				{
+					"name": "Get cities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create city",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country_id\": 1,\r\n    \"city_name\": \"Mendoza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cities"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get city",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cities/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cities",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify city",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country_id\": 1,\r\n    \"city_name\": \"Mendoza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cities/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cities",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete city",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cities/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cities",
+								"17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Get companies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company_name\": \"Hogwarts\",\r\n    \"email\": \"hogwarts@gmail.com\",\r\n    \"city_id\": 3,\r\n    \"address\": \"Paraguay 650\",\r\n    \"telephone\": \"03415557777\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get company",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/companies/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify company",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company_name\": \"Hogwarts\",\r\n    \"email\": \"hogwarts@gmail.com\",\r\n    \"city_id\": 3,\r\n    \"address\": \"Paraguay 650\",\r\n    \"telephone\": \"03415557777\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/companies/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete company",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/companies/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Get contacts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Basico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstname\": \"Agustín Emanuel\",\r\n  \"lastname\": \"Soria\",\r\n  \"email\": \"agustinesoria96@gmail.com\",\r\n  \"city_id\": 1,\r\n  \"address\": \"Mitre 123\",\r\n  \"company_id\": 1,\r\n  \"position\": \"UI Designer\",\r\n  \"interest\": 100,\r\n  \"preferred_channels\": [\r\n    {\r\n      \"channel_id\": 1,\r\n      \"user_account\": \"5411345645\",\r\n      \"preference\": \"Canal favorito\"\r\n    },\r\n    {\r\n      \"channel_id\": 2,\r\n      \"user_account\": \"https://www.facebook.com/agustinsoria\",\r\n      \"preference\": \"No molestar\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get contact",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/contacts/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify contact",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstname\": \"Agustín Emanuel\",\r\n  \"lastname\": \"Soria\",\r\n  \"email\": \"agustinesoria96@gmail.com\",\r\n  \"city_id\": 1,\r\n  \"address\": \"Humboldt 1967\",\r\n  \"company_id\": 1,\r\n  \"position\": \"UI Designer\",\r\n  \"interest\": 100,\r\n  \"preferred_channels\": [\r\n      {\r\n          \"channel_id\": 1,\r\n            \"user_account\": 341564399,\r\n            \"preference\": \"Canal favorito\",\r\n            \"channel\": \"Whatsapp\"\r\n      }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/contacts/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/contacts/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add channel to a contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Admin",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA"
+							},
+							{
+								"description": "Básico",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"channel_id\": 4,\r\n    \"user_account\": \"https://www.facebook.com/hagrid\",\r\n    \"preference\": \"No molestar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/contacts/11/channels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts",
+								"11",
+								"channels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete channel of contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/contacts/11/channels/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts",
+								"11",
+								"channels",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get search results",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Admin",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"disabled": true
+							},
+							{
+								"description": "Básico",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search_value\": \"ha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Channels",
+			"item": [
+				{
+					"name": "Get channels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"description": "Básico",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/channels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"channels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create channel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Admin",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"disabled": true
+							},
+							{
+								"description": "Básico",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"channel_name\": \"Telegram\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/channels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"channels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get channel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Admin",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA",
+								"disabled": true
+							},
+							{
+								"description": "Básico",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"channel_name\": \"Discord\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/channels/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"channels",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify channel",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "Admin",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA"
+							},
+							{
+								"description": "Básico",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"channel_name\": \"Discord\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/channels/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"channels",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete channel",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"description": "Admin",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmllbGFiZXJhcmRpQGxpdmUuY29tLmFyIiwicGVyZmlsIjoiQWRtaW4iLCJ1c2VyX2lkIjoxLCJpYXQiOjE2MTc3NjEzOTN9.XJ7PJtWzTpLIXcQi_9mMhROGgTqApf_-Egx4DmJvXqA"
+							},
+							{
+								"description": "Básico",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9saXZpYUBob3RtYWlsLmNvbSIsInBlcmZpbCI6IkLDoXNpY28iLCJ1c2VyX2lkIjoyLCJpYXQiOjE2MTc4MDQ0MzN9.hodwmyVRsh1fy8eOD32Jk1dZ7ssSQE1JPbIY5_I0iG8",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"channel_name\": \"Whatsapp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/channels/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"channels",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
